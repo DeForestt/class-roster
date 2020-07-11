@@ -74,7 +74,6 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 		{
 			int daysInCourse[3] = { daysInCourse1, daysInCourse2, daysInCourse3};
 			this->classRosterArray[i] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeProgram);
-			cout << "New Student Added!!!" << endl;
 			return;
 		}
 	}
