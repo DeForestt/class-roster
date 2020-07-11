@@ -12,12 +12,23 @@ const string studentData[] = { "A1,John,Smith,John1989@gmail.com,20,30,35,40,SEC
 
 int main()
 {
-    Roster r(studentData);
-    r.printAll();
-    cout << endl << "-----------------------------------------------------------------------------" << endl << "Average A1" << endl;
-    r.printAverageDaysInCourse("A1");
-    r.printInvalidEmails();
-    cout << endl << "-----------------------------------------------------------------------------" << endl << "Printing by degree 'SOFTWARE'" << endl;
-    r.printByDegreeProgram(degree::SOFTWARE);
+    Roster classRoster(studentData);
+    classRoster.printAll();
+    classRoster.printInvalidEmails();
+
+    for (size_t i = 0; i < 5; i++)
+    {
+        string id = "A";
+        id.append(to_string(i));
+        classRoster.printAverageDaysInCourse(id);
+    }
+
+    classRoster.printByDegreeProgram(degree::SOFTWARE);
+
+    classRoster.remove("A3");
+
+    classRoster.printAll();
+
+    classRoster.remove("A3");
     return 0;
 }
