@@ -60,6 +60,11 @@ Roster::Roster(const string studentData[])
 	return;
 }
 
+Roster::~Roster()
+{
+	delete this->classRosterArray;
+}
+
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degree degreeProgram)
 {
 	//Scroll through the list of pointers filling the first instance of a nullptr with the new student;
@@ -150,24 +155,30 @@ void Roster::printInvalidEmails()
 		char atSymbol = '@';
 		char dotSymbol = '.';
 		char space = ' ';
+		char* checkAt = nullptr;
+		char* checkDot = nullptr;
+		char* checkSpace = nullptr;
 		if (this->classRosterArray[i] != nullptr)
 		{
-			const char* checkAt = nullptr;
-			const char* checkDot = nullptr;
-			const char* checkSpace = nullptr;
 			string emailAddress = this->classRosterArray[i]->GetEmailAddress();
+			checkAt = nullptr;
+			checkDot = nullptr;
+			checkSpace = nullptr;
+			char *email = NULL;
 
-			emailAddress.c_str();
+			email = _strdup(emailAddress.c_str());
 
-			checkAt = strchr(emailAddress.c_str(), atSymbol);
-			checkSpace = strchr(emailAddress.c_str(), space);
-			checkDot = strchr(emailAddress.c_str(), dotSymbol);
+			checkAt = strchr(email, atSymbol);
+			checkSpace = strchr(email, space);
+			checkDot = strchr(email, dotSymbol);
 
 			if (checkAt == nullptr || checkDot == nullptr || checkSpace != nullptr)
 			{
 				cout << emailAddress;
 			}
+			delete email;
 		}
+
 	}
 }
 
