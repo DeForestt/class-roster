@@ -17,13 +17,13 @@ Student::Student(string ID, string firstName, string lastName, string emailAddre
 
 void Student::print() 
 {
-	cout << "Student ID: " << this->studentID << " | Fist Name: " << this->firstName << " | Last Name: " << this->lastName;
-	cout << " | Email Address: " << this->emailAddress << " | Age: " << this->age << " | Days to complete course: ";
+	cout << this->studentID << "\t" << "Fist Name: " << this->firstName << "\tLast Name: " << this->lastName;
+	cout << "\tEmail Address: " << this->emailAddress << "\tAge: " << this->age << "\tDays to complete course: {";
 	for (int i = 0; i < 3; ++i)
 	{
 		cout << this->daysToCourseCompletion[i];
 		if (i < 2) cout << ", ";
 	}
-	cout << " | Degree Program: " << degreeFields[(int)this->degreeProgram];
+	cout << "} \tDegree Program: " << degreeFields[(int)this->degreeProgram] << endl;
 	return;
 }

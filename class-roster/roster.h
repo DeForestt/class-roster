@@ -12,5 +12,7 @@ public:
 	void printByDegreeProgram(degree degreeProgram);
 private:
 	Student* classRosterArray[5];
+
+	
 };
 

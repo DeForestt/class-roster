@@ -11,7 +11,7 @@ public:
 	void print();
 
 #pragma region  Accessors
-	const char * GetStudentID()
+	const string GetStudentID()
 	{
 		return this->studentID;
 	}
