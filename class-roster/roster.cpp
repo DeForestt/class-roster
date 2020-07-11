@@ -1,4 +1,5 @@
 #include "roster.h"
+#include <stdio.h>
 #include <string>
 #include<algorithm>
 #include<iostream>
@@ -62,7 +63,10 @@ Roster::Roster(const string studentData[])
 
 Roster::~Roster()
 {
-	delete this->classRosterArray;
+	for (int i = 0; i < 5; i++)
+	{
+		delete this->classRosterArray[i];
+	}
 }
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degree degreeProgram)

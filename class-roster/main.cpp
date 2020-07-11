@@ -12,6 +12,7 @@ const string studentData[] = { "A1,John,Smith,John1989@gmail.com,20,30,35,40,SEC
 
 int main()
 {
+    cout << "\t\t\t\tDeForestt Thompson\tWGU\t##########";
     Roster* classRoster = new Roster(studentData);
     classRoster->printAll();
     classRoster->printInvalidEmails();
