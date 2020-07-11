@@ -2,6 +2,7 @@
 #include <string>
 #include<algorithm>
 #include<iostream>
+#include<cstring>
 
 Roster::Roster(const string studentData[])
 {
@@ -138,6 +139,34 @@ void Roster::printAverageDaysInCourse(string ID)
 		if (e == 50)
 		{
 			cout << "No student with the id " << ID << endl;
+		}
+	}
+}
+
+void Roster::printInvalidEmails()
+{
+	for (size_t i = 0; i < 5; i++)
+	{
+		char atSymbol = '@';
+		char dotSymbol = '.';
+		char space = ' ';
+		if (this->classRosterArray[i] != nullptr)
+		{
+			const char* checkAt = nullptr;
+			const char* checkDot = nullptr;
+			const char* checkSpace = nullptr;
+			string emailAddress = this->classRosterArray[i]->GetEmailAddress();
+
+			emailAddress.c_str();
+
+			checkAt = strchr(emailAddress.c_str(), atSymbol);
+			checkSpace = strchr(emailAddress.c_str(), space);
+			checkDot = strchr(emailAddress.c_str(), dotSymbol);
+
+			if (checkAt == nullptr || checkDot == nullptr || checkSpace != nullptr)
+			{
+				cout << emailAddress;
+			}
 		}
 	}
 }

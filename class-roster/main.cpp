@@ -14,6 +14,6 @@ int main()
     r.printAll();
     cout << endl << "-----------------------------------------------------------------------------" << endl << "Average A1" << endl;
     r.printAverageDaysInCourse("A1");
-    //r.printAll();
+    r.printInvalidEmails();
     return 0;
 }
